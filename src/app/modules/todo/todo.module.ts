@@ -10,15 +10,23 @@ import { TodoCreateFormUiComponent } from './ui/todo-create-form-ui/todo-create-
 import {FormsModule} from "@angular/forms";
 import { TodoListUiComponent } from './ui/todo-list-ui/todo-list-ui.component';
 import { TodoListItemUiComponent } from './ui/todo-list-item-ui/todo-list-item-ui.component';
-import { TodoListItemEditComponent } from './ui/todo-list-item-edit/todo-list-item-edit.component';
 
 @NgModule({
-  declarations: [TotoPageComponent, TodoWidgetComponent, TodoCreateFormUiComponent, TodoListUiComponent, TodoListItemUiComponent, TodoListItemEditComponent],
+  declarations: [
+    TotoPageComponent,
+    TodoWidgetComponent,
+    TodoCreateFormUiComponent,
+    TodoListUiComponent,
+    TodoListItemUiComponent,
+  ],
   imports: [
     CommonModule,
     StoreModule.forFeature(TODO_REDUCER_NODE, todoReducer),
     RouterModule.forChild(todoRoutes),
     FormsModule
+  ],
+  exports: [
+    TodoWidgetComponent
   ]
 })
 export class TodoModule { }
